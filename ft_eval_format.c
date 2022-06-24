@@ -6,19 +6,20 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:20:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 16:04:16 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:11:25 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*
 static int	ft_is_not_format(int c)
 {
-	if (c != 'u' || c != 'd' || c != 'c'
+	return (c != 'u' || c != 'd' || c != 'c'
 			|| c != 's' || c != 'u' || c != 'p'
-		   || c != 'x' || c != 'X' || c != '%')
-		return (c);
+		   || c != 'x' || c != 'X' || c != '%');
 }
+*/
 
 int	ft_eval_format(t_print *tab, const char *format, int index)
 {

@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 16:01:59 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:21:03 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ int	ft_printf(const char *format, ...)
 	return (ret);
 }
 
+#include <stdio.h>
+
 int	main(void)
 {
-	ft_printf("hello, world");
+	ft_printf("%d\n", (ft_printf("hello, world")));
 	return (0);
 }
