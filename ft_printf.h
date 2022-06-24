@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 07:11:44 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 12:45:03 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:47:28 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ typedef struct s_print
 
 /* declarations */
 
-int	ft_printf(const char *format, ...);
-int	ft_eval_format(t_print *tab, const char *format, int index);
+int			ft_printf(const char *format, ...);
+int			ft_eval_format(t_print *tab, const char *format, int index);
+void		ft_print_char(t_print *tab);
 
 #endif

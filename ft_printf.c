@@ -6,11 +6,10 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 12:16:15 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:29:12 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
 
 t_print	*ft_initialize_tab(t_print *tab)
@@ -20,7 +19,6 @@ t_print	*ft_initialize_tab(t_print *tab)
 	tab->zero = 0;
 	tab->pnt = 0;
 	tab->dash = 0;
-	tab->tl = 0;
 	tab->tl = 0;
 	tab->sign = 0;
 	tab->is_zero = 0;
