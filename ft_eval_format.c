@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:20:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 15:29:04 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:04:16 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,9 @@ int	ft_eval_format(t_print *tab, const char *format, int index)
 	int	ret;
 
 	ret = 0;
-	while (ft_is_not_format(format[index]))
+	while (format[index++])
 	{
-		if (format[index] == '.')
-			tab->pnt = 1;
-		index++;
-		if (format[index] == '-')
-			tab->dash = 1;
-		index++;
-		if (format[index] == '0')
-			tab->zero = 1;
-		if (format[index] == ' ')
-			tab->sp = 1;
-		index++;
-		return (index)
-	}
-		if else (format[index] == 'c')
+		if (format[index] == 'c')
 			ft_print_char(tab);
 		index++;
 	}
