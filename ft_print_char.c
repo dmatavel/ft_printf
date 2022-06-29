@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:19:52 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 14:45:22 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:31:47 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_char(t_print *tab)
 {
-	char	a;
+	int	a;
 	
 	a = va_arg(tab->args, int);
 	tab->tl += write(1, &a, 1);

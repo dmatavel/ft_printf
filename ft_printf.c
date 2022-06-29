@@ -3,60 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
+/*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 16:21:03 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:19:57 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-t_print	*ft_initialize_tab(t_print *tab)
+void	ft_print_char(t_print *tab)
 {
-	tab->wdt = 0;
-	tab->prc = 0;
-	tab->zero = 0;
-	tab->pnt = 0;
-	tab->dash = 0;
-	tab->tl = 0;
-	tab->sign = 0;
-	tab->is_zero = 0;
-	tab->perc = 0;
-	tab->sp = 0;
-	return (tab);
+	char a;                      
+                          
+    a = va_arg(tab->args, int);
+    tab->tl += write(1, &a, 1);
 }
-
 int	ft_printf(const char *format, ...)
 {
-	int	i;
-	int ret;
 	t_print *tab;
-	
+
 	tab = (t_print *)malloc(sizeof(t_print));
 	if (!tab)
 		return (-1);
-	ft_initialize_tab(tab);
-	va_start(tab->args, format);
-	i = -1;
+	int	i;
+	int	ret;
+
+	i = 0;
 	ret = 0;
-	while (format[++i])
+	va_start(tab->args, format);
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
-			i = ft_eval_format(tab, format, i + 1);
+		if(format[i] == '%')
+			{
+				if (format[i + 1] == 'c')
+				{
+					ft_print_char(tab);
+					i++;
+				}
+				if else
+				{
+					(format[i + 1] == 'd')
+				}
+			}
 		else
-			ret += write(1, &format[i], 1);
+			tab->tl += write(1, &format[i], 1);
+		i++;
 	}
-	va_end(tab->args);
-	ret += tab->tl;
+	ret = tab->tl;
 	free(tab);
+	printf("%d\n", ret);
 	return (ret);
 }
 
-#include <stdio.h>
-
 int	main(void)
 {
-	ft_printf("%d\n", (ft_printf("hello, world")));
+	char	c;
+
+	c = 'A';
+	ft_printf("My ft_printf: hello, world %c 42 %c\n", c, c);
+	printf("Original printf: hello, world %c 42 %c\n", c, c);
+	ft_printf("My return: %d", (ft_printf("My ft_printf: hello, world %c 42 %c\n", c, c)));
+	printf("Original return: %d", (printf("My ft_printf: hello, world %c 42 %c\n", c, c)));
 	return (0);
 }
