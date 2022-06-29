@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_eval_format.c                                   :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 12:20:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/29 14:40:56 by dmatavel         ###   ########.fr       */
+/*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
+/*   Updated: 2022/06/29 14:36:16 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-static int	ft_is_not_format(int c)
+ void    ft_print_int(t_print *tab)
 {
-	return (c != 'u' || c != 'd' || c != 'c'
-			|| c != 's' || c != 'u' || c != 'p'
-		   || c != 'x' || c != 'X' || c != '%');
+	int i;
+	
+	i = va_arg(tab->args, int);
+	ft_putnbr_fd(i, 1);
 }
-
-
-int	ft_eval_format(const char *format, int i)
-{
-	int	ret;
-
-	ret = 0;
-	while (format[index++])
-	{
-		if (format[index] == 'c')
-			ft_print_char(format[index]);
-	}
-	return (tab);
-}
-*/

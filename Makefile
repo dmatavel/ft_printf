@@ -1,10 +1,12 @@
-SRCS = ft_printf.c ft_eval_format.c ft_print_char.c
+SRCS = ft_printf.c ft_eval_format.c ft_print_char.c ft_print_str.c \
+	   ft_print_int.c
+
 OBJS = $(SRCS:.c=.o)
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LIBFT_PATH = libft/.
-INCLUDES = libft/libft.a
+LIBFT_PATH = libft/
+INCLUDE = libft.a
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -12,9 +14,11 @@ INCLUDES = libft/libft.a
 include: $(LIBFT_PATH)
 	make -C $(LIBFT_PATH) all
 	make -C $(LIBFT_PATH) clean
+	cd $(LIBFT_PATH) && mv $(INCLUDE) ../
 
-$(NAME): include $(OBJS) $(INCLUDES)
-	ar -rc $(NAME) $(OBJS) $(INCLUDES)
+$(NAME): include $(OBJS)
+	mv $(INCLUDE) $(NAME)
+	ar -rc $(NAME) $(OBJS)
 
 all: $(NAME)
 

@@ -1,56 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/29 14:34:36 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/29 14:29:56 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int	ft_printf(const char *format, ...)
+int	main(void)
 {
-	t_print *tab;
+	/*
+	ft_printf("1) print char test\n");
+	
+	char	c;
 
-	tab = (t_print *)malloc(sizeof(t_print));
-	if (!tab)
-		return (-1);
+	c = 'A';
+	ft_printf("My ft_printf: hello, world %c 42 %c\n", c, c);
+	printf("Original printf: hello, world %c 42 %c\n", c, c);
+
+	ft_printf("2) print str test\n");
+	
+	char	str[] = "hello, world! hello, 42!";
+
+	ft_printf("My ft_printf: %s This is it! \n", str);
+	printf("Original printf: %s This is it!\n", str);
+	*/
+
+	ft_printf("3) print int test\n");
+	
 	int	i;
-	int	ret;
 
-	i = 0;
-	ret = 0;
-	va_start(tab->args, format);
-	while (format[i] != '\0')
-	{
-		if(format[i] == '%')
-			{
-				if (format[i + 1] == 'c')
-				{
-					ft_print_char(tab);
-					i++;
-				}
-				else if (format[i + 1] == 's')
-				{
-					ft_print_str(tab);
-					i++;
-				}
-				else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-				{
-					ft_print_int(tab);
-					i++;
-				}
-			}
-		else
-			tab->tl += write(1, &format[i], 1);
-		i++;
-	}
-	ret = tab->tl;
-	free(tab);
-	return (ret);
+	i = 42;
+
+	ft_printf("My ft_printf: %i\n", i);
+	printf("Original printf: %i\n", i);
+	
+	return (0);
 }

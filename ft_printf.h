@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 07:11:44 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/24 14:47:28 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/06/29 14:32:03 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,8 @@
 typedef struct s_print
 {
 	va_list	args;
-	int		wdt;
-	int		prc;
-	int		zero;
-	int		pnt;
-	int		dash;
 	int		tl;
-	int		sign;
-	int		is_zero;
 	int		perc;
-	int		sp;
 }	t_print;
 
 /* declarations */
@@ -39,5 +31,7 @@ typedef struct s_print
 int			ft_printf(const char *format, ...);
 int			ft_eval_format(t_print *tab, const char *format, int index);
 void		ft_print_char(t_print *tab);
+void		ft_print_str(t_print *tab);
+void		ft_print_int(t_print *tab);
 
 #endif
