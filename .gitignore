@@ -54,3 +54,9 @@ dkms.conf
 #libft
 
 libft/
+
+#Testers
+
+42TESTERS-PRINTF/
+printfTester/
+pft/
