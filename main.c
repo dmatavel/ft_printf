@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/04 15:17:51 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:45:59 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	main(void)
 	char	c;
 
 	c = 'A';
-	ft_printf("My ft_printf: hello, world %c 42 %c\n", c, c);
+	printf("%d\n", (ft_printf("My ft_printf: hello, world %c 42 %c\n", c, c)));
 	printf("Original printf: hello, world %c 42 %c\n", c, c);
 
+	/*
 	ft_printf("2) print str test\n");
 
-	/*	
 	char	str[] = "hello, world! hello, 42!";
 
 	ft_printf("My ft_printf: %s This is it! \n", str);

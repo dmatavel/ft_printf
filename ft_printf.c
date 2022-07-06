@@ -6,14 +6,14 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/06 13:16:40 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:48:37 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_eval_format(const char *format, int i);
-int	ft_print_char(char *c);
+int ft_eval_format(va_list args, const char format);
+int	ft_print_char(char c);
 
 int	ft_printf(const char *format, ...)
 {
@@ -29,7 +29,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			ret += ft_eval_format(format, i);
+			ret += ft_eval_format(args, format[i + 1]);
 			i++;
 		}
 		else
@@ -40,25 +40,18 @@ int	ft_printf(const char *format, ...)
 	return (ret);
 }
 
-int	ft_eval_format(const char *format, int i)
+int	ft_eval_format(va_list args, const char format)
 {
 	int	ret;
 
 	ret = 0;
-	if (format[i + 1] == 'c')
-		ret += ft_print_char((char *)format);
+	if (format == 'c')
+		ret += ft_print_char(va_arg(args, int));
 	return (ret);
 }
 
-int	ft_print_char(char *c)
+int	ft_print_char(char c)
 {
-	va_list	args;
-	int		ret;
-	char	nc;
-	
-	nc = (char )c;
-	nc = va_arg(args, int);
-	ret = 0;
-	ret += write(1, &nc, 1);
-	return (ret);
+	write(1, &c, 1);
+	return (1);
 }
