@@ -10,14 +10,14 @@ INCLUDE = libft.a
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
+$(NAME): include $(OBJS)
+	mv $(INCLUDE) $(NAME)
+	ar -rc $(NAME) $(OBJS)
+
 include: $(LIBFT_PATH)
 	make -C $(LIBFT_PATH) all
 	make -C $(LIBFT_PATH) clean
 	cd $(LIBFT_PATH) && mv $(INCLUDE) ../
-
-$(NAME): include $(OBJS)
-	mv $(INCLUDE) $(NAME)
-	ar -rc $(NAME) $(OBJS)
 
 all: $(NAME)
 
