@@ -6,17 +6,19 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:21:41 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/29 13:23:10 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/11 12:54:01 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_print_str(t_print *tab)
+int	ft_print_str(char *s)
 {
-	char    *s;
+	int	ret;
 
-	s = va_arg(tab->args, char *);
+	if (!s)
+		return (write(1, "(null)", 6));
+	ret = 0;
 	ft_putstr_fd(s, 1);
-	tab->tl += ft_strlen(s);
+	return (ret += ft_strlen(s));
 }

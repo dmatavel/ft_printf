@@ -6,16 +6,26 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/29 14:36:16 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/11 13:58:17 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
- void    ft_print_int(t_print *tab)
+int	ft_print_int(int i)
 {
-	int i;
+	int ret;
+	int	digit;
 	
-	i = va_arg(tab->args, int);
+	ret = 0;
+	digit = i;
+	if (digit == 0 || digit < 0)
+		ret++;
+	while (digit != 0)
+	{
+		digit /= 10;
+		ret++;
+	}
 	ft_putnbr_fd(i, 1);
+	return (ret);
 }
