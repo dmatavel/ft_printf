@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 07:11:44 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/11 14:32:37 by dmatavel         ###   ########.fr       */
+/*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
+/*   Updated: 2022/07/11 14:42:54 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include "libft/libft.h"
-#include <stdarg.h>
-
-int	ft_printf(const char *format, ...);
-int ft_eval_format(va_list args, const char format);
-int ft_print_char(char c);
-int	ft_print_str(char *);
-int	ft_print_int(int n);
-int	ft_print_unsigned_int(unsigned int n);
-#endif
+int	ft_print_unsigned_int(unsigned int n)
+{
+	int ret;
+	int	digit;
+	
+	ret = 0;
+	digit = n;
+	if (digit == 0)
+		ret++;
+	while (digit != 0)
+	{
+		digit /= 10;
+		ret++;
+	}
+	ft_putnbr_fd(n, 1);
+	return (ret);
+}

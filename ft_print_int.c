@@ -6,19 +6,19 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/11 13:58:17 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/11 14:35:06 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_int(int i)
+int	ft_print_int(int n)
 {
 	int ret;
 	int	digit;
 	
 	ret = 0;
-	digit = i;
+	digit = n;
 	if (digit == 0 || digit < 0)
 		ret++;
 	while (digit != 0)
@@ -26,6 +26,6 @@ int	ft_print_int(int i)
 		digit /= 10;
 		ret++;
 	}
-	ft_putnbr_fd(i, 1);
+	ft_putnbr_fd(n, 1);
 	return (ret);
 }
