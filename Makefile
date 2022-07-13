@@ -1,5 +1,5 @@
 SRCS = ft_printf.c ft_eval_format.c ft_print_char.c ft_print_str.c \
-	   ft_print_int.c ft_print_unsigned_int.c
+	   ft_print_int.c ft_print_unsigned_int.c ft_print_lower_hex \
 
 OBJS = $(SRCS:.c=.o)
 NAME = libftprintf.a
