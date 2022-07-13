@@ -6,13 +6,13 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/13 12:45:30 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/13 12:49:39 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_unsigned_nbr_fd(unsigned int n, int fd);
+static void	ft_put_unsigned_nbr_fd(unsigned int n, int fd);
 
 int	ft_print_unsigned_int(unsigned int n)
 {
