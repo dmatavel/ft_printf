@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:20:51 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/13 14:26:21 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:36:20 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,40 @@ static char *itoa_base(int value, char *buffer, int base)
 	return (ft_strdup(buffer));
 }
 */
+
+#include "ft_printf.h"
+
+void	ft_putnbr_hex_fd(unsigned int n, int fd)
+{
+	int r;
+	char ld;
+	char rd;
+
+	if (fd < 0)
+		return ;
+	/*
+	if (n > 15)
+		ft_putnbr_hex_fd(n / 16, fd);
+	if (n > 9)
+		ft_putchar_fd((n % 16 - 10) + 97, fd);
+	else
+		ft_putchar_fd(n % 16 + 48, fd);
+	*/
+	while(n)
+	{
+		r = n % 16;
+		if(r >= 10)
+			rd = 97 + (r - 10);
+		else
+			ld = 48 + r;
+		n = n / 16;
+	}
+	ft_putchar_fd(rd, 1);
+	ft_putchar_fd(ld, 1);
+	if (n == 0)
+		ft_putchar_fd(48, 1);
+}
+
 int	ft_print_lower_hex(unsigned int n)
 {
 	int	ret;
@@ -74,9 +108,9 @@ int	ft_print_lower_hex(unsigned int n)
 		ret++;
 	while (digit != 0)
 	{
-		digit /= 10;
+		digit /= 16;
 		ret++;
 	}
-	// function to print a hex nbr;
+	ft_putnbr_hex_fd(n, 1);
 	return (ret);
 }

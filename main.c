@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/13 14:15:01 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:50:12 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(void)
 //	printf("%d\n", (printf("%u\n", 9223372036854775807)));
 //	ft_printf("%d\n", (ft_printf("%u\n", 9223372036854775807)));
 
-	printf("%d\n", (printf("%x\n", 42)));
-	ft_printf("%d\n", (ft_printf("%x\n", 42)));
+	printf("%d\n", (printf("%x\n", 16)));
+		ft_printf("%d\n", (ft_printf("%x\n", 16)));
 	return (0);
 }
