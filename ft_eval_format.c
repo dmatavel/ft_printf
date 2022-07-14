@@ -6,16 +6,16 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:20:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 18:43:34 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/14 19:27:45 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_eval_format(va_list args, const char format)
+int	ft_eval_format(va_list args, const char format)
 {
-	int ret;
-	
+	int	ret;
+
 	ret = 0;
 	if (format == 'c')
 		ret += ft_print_char(va_arg(args, int));

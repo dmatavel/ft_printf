@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:35:41 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 17:41:52 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/14 19:40:35 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_putnbr_hex_fd(unsigned int n, int fd)
 {
-	char *radix;
+	char	*radix;
 
 	radix = "0123456789ABCDEF";
 	if (fd < 0)
@@ -29,8 +29,8 @@ static void	ft_putnbr_hex_fd(unsigned int n, int fd)
 
 int	ft_print_upper_hex(unsigned int n)
 {
-	int	ret;
-	unsigned int digit;
+	int				ret;
+	unsigned int	digit;
 
 	ret = 0;
 	digit = n;

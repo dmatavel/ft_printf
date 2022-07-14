@@ -6,14 +6,13 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:19:52 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/11 12:23:52 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/14 19:34:14 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_char(char c)
+int	ft_print_char(char c)
 {
 	return (write(1, &c, 1));
 }
-
