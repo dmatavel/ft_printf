@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_lower_hex.c                               :+:      :+:    :+:   */
+/*   ft_print_upper_hex.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 13:20:51 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 17:33:42 by dmatavel         ###   ########.fr       */
+/*   Created: 2022/07/14 17:35:41 by dmatavel          #+#    #+#             */
+/*   Updated: 2022/07/14 17:41:52 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_putnbr_hex_fd(unsigned int n, int fd)
 {
 	char *radix;
 
-	radix = "0123456789abcdef";
+	radix = "0123456789ABCDEF";
 	if (fd < 0)
 		return ;
 	if (n >= 16)
@@ -27,7 +27,7 @@ static void	ft_putnbr_hex_fd(unsigned int n, int fd)
 		ft_putchar_fd(radix[n % 16], fd);
 }
 
-int	ft_print_lower_hex(unsigned int n)
+int	ft_print_upper_hex(unsigned int n)
 {
 	int	ret;
 	unsigned int digit;

@@ -6,12 +6,13 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/13 16:50:12 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/14 18:42:00 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -48,7 +49,7 @@ int	main(void)
 //	printf("%d\n", (printf("%u\n", 9223372036854775807)));
 //	ft_printf("%d\n", (ft_printf("%u\n", 9223372036854775807)));
 
-	printf("%d\n", (printf("%x\n", 16)));
-		ft_printf("%d\n", (ft_printf("%x\n", 16)));
+//	printf("%d\n", (printf("%p\n%p\n", LONG_MIN, LONG_MAX)));
+		ft_printf("%d\n", (ft_printf("%p\n%p\n", -1, -1)));
 	return (0);
 }
