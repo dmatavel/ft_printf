@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 18:42:00 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/14 21:42:41 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int	main(void)
 //	ft_printf("%d\n", (ft_printf("%u\n", 9223372036854775807)));
 
 //	printf("%d\n", (printf("%p\n%p\n", LONG_MIN, LONG_MAX)));
-		ft_printf("%d\n", (ft_printf("%p\n%p\n", -1, -1)));
+		ft_printf("%d\n", (ft_printf("%p\n%p\n", 0, 0)));
 	return (0);
 }
