@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:39:57 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 21:42:41 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/14 23:49:35 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,67 @@
 
 int	main(void)
 {
+	char	*null;
+	char	*zero;
+	int		n;
+	void	*test_int;
 
-/*
-	ft_printf("1) print char test\n");
-	
-	char	c;
-
-	c = 'A';
-	printf("%d\n", (ft_printf("My ft_printf: hello, world %c 42 %c\n", c, c)));
-	printf("Original printf: hello, world %c 42 %c\n", c, c);
-	
-	ft_printf("2) print str test\n");
-
-	char	str[] = "hello, world! hello, 42!";
-
-	ft_printf("My ft_printf: %s This is it! \n", str);
-	printf("Original printf: %s This is it!\n", str);
-	printf("%d\n", printf(" NULL %s\n NULL ", NULL));
-
-	ft_printf("3) print int test\n");
-	
-	ft_printf("r: %d", (ft_printf("%d\n", -1)));
-	ft_printf("\n");
-	printf("r: %d", (printf("%d\n", -1)));
-	
-	ft_printf("4) print unsigned int test\n");
-	
-	ft_printf("r: %d", (ft_printf("%u\n", 1)));
-	ft_printf("\n");
-	*/
-	
-//	printf("%d\n", (printf("%u\n", 9223372036854775807)));
-//	ft_printf("%d\n", (ft_printf("%u\n", 9223372036854775807)));
-
-//	printf("%d\n", (printf("%p\n%p\n", LONG_MIN, LONG_MAX)));
-		ft_printf("%d\n", (ft_printf("%p\n%p\n", 0, 0)));
+	null = NULL;
+	zero = 0;
+	n = 42;
+	test_int = &n;
+	ft_putstr_fd("Test: %c conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("Hello, %c, %c, %c. ", 'A', 'B', 'C')));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("Hello, %c, %c, %c. ", 'A', 'B', 'C')));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %s conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("%s, %s. ", "Hello, 42", null)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("%s, %s. ", "Hello, 42", null)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %p conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("%p, %p, %p, %p. ", "Hello, 42", null, zero, test_int)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("%p, %p, %p, %p. ", "Hello, 42", null, zero, test_int)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %d conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("%d, %d, %d, %d. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("%d, %d, %d, %d. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %i conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %i.\n", (ft_printf("%i, %i, %i, %i. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %i.\n", (printf("%i, %i, %i, %i. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %u conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("%u, %u, %u, %u. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("%u, %u, %u, %u. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %x conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("%x, %x, %x, %x. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("%x, %x, %x, %x. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %X conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("%X, %X, %X, %X. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("%X, %X, %X, %X. ", 42, INT_MIN, INT_MAX, UINT_MAX)));
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("Test: %% conversion:\n", 1);
+	ft_putstr_fd("ft_printf: ", 1);
+	ft_printf("Return: %d.\n", (ft_printf("Hello, 42%%. ")));
+	ft_putstr_fd("printf: ", 1);
+	printf("Return: %d.\n", (printf("Hello, 42%%. ")));
 	return (0);
 }
