@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:46:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 21:43:54 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/15 13:19:52 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_print_pointer(unsigned long n)
 
 	ret = 0;
 	digit = n;
-	if ((void*)n == NULL)
-		return (write(1, "(nil)", 5));
+	if ((void *)n == NULL)
+		return (write(1, "0x0", 3));
 	while (digit != 0)
 	{
 		digit /= 16;
