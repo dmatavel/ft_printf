@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 19:25:19 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 00:54:51 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,8 @@ static void	ft_put_unsigned_nbr_fd(unsigned int n, int fd);
 
 int	ft_print_unsigned_int(unsigned int n)
 {
-	int				ret;
-	unsigned int	digit;
-
-	ret = 0;
-	digit = n;
-	if (digit == 0)
-		ret++;
-	while (digit != 0)
-	{
-		digit /= 10;
-		ret++;
-	}
 	ft_put_unsigned_nbr_fd(n, 1);
-	return (ret);
+	return (ft_cntdgt(n, 10));
 }
 
 void	ft_put_unsigned_nbr_fd(unsigned int n, int fd)

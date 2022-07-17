@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:27:04 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/06/22 16:14:30 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 00:56:58 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 		/* libft.h */
 
 int			ft_cntwrd(char const *s, char c);
+long long	ft_cntdgt(long long n, int base);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);

@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:20:51 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/17 00:22:42 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 01:35:25 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,11 @@
 
 int	ft_print_hex(unsigned int n, const char *base)
 {
-	int				ret;
-	unsigned int	digit;
-
-	ret = 0;
-	digit = n;
-	if (digit == 0)
-		ret++;
-	while (digit != 0)
-	{
-		digit /= 16;
-		ret++;
-	}
 	if (n >= 16)
 		ft_print_hex(n / 16, base);
+	if (n > 10)
+		ft_putchar_fd(base[n % 16], 1);
 	else
 		ft_putchar_fd(base[n % 16], 1);
-	return (ret);
+	return (ft_cntdgt(n, 16));
 }

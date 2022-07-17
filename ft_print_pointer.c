@@ -6,42 +6,33 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 17:46:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/15 13:19:52 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 02:08:30 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putnbr_hex_fd(unsigned long n, int fd)
+static void	ft_print_ulong_hex(unsigned long n)
 {
-	char	*radix;
+	char	*base;
 
-	radix = "0123456789abcdef";
-	if (fd < 0)
-		return ;
+	base = LOWER_HEX_BASE;
 	if (n >= 16)
-		ft_putnbr_hex_fd(n / 16, fd);
+		ft_print_ulong_hex(n / 16);
 	if (n > 10)
-		ft_putchar_fd(radix[n % 16], fd);
+		ft_putchar_fd(base[n % 16], 1);
 	else
-		ft_putchar_fd(radix[n % 16], fd);
+		ft_putchar_fd(base[n % 16], 1);
 }
 
 int	ft_print_pointer(unsigned long n)
 {
-	int				ret;
-	unsigned long	digit;
+	char	*prfx;
 
-	ret = 0;
-	digit = n;
+	prfx = "0x";
 	if ((void *)n == NULL)
 		return (write(1, "0x0", 3));
-	while (digit != 0)
-	{
-		digit /= 16;
-		ret++;
-	}
-	ft_putstr_fd("0x", 1);
-	ft_putnbr_hex_fd(n, 1);
-	return (ret + 2);
+	ft_putstr_fd(prfx, 1);
+	ft_print_ulong_hex(n);
+	return (ft_cntdgt(n, 16) + ft_strlen(prfx));
 }

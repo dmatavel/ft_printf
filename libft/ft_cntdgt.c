@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_cntdgt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 14:33:03 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/17 00:52:35 by dmatavel         ###   ########.fr       */
+/*   Created: 2022/07/17 00:41:58 by dmatavel          #+#    #+#             */
+/*   Updated: 2022/07/17 01:00:40 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_print_int(int n)
+long long	ft_cntdgt(long long n, int base)
 {
-	ft_putnbr_fd(n, 1);
-	return (ft_cntdgt(n, 10));
+	long long	ret;
+	long long	digit;
+
+	ret = 0;
+	digit = n;
+	if (digit == 0 || digit < 0)
+		ret++;
+	while (digit != 0)
+	{
+			digit /= base;
+			ret++;
+	}
+	return (ret);
 }
