@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 07:11:44 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 19:41:27 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 00:15:52 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "libft/libft.h"
 # include <stdarg.h>
+# define LOWER_HEX_BASE "0123456789abcdef"
+# define UPPER_HEX_BASE "0123456789ABCDEF"
 
 int	ft_printf(const char *format, ...);
 int	ft_eval_format(va_list args, const char format);
@@ -23,7 +25,6 @@ int	ft_print_str(char *s);
 int	ft_print_pointer(unsigned long n);
 int	ft_print_int(int n);
 int	ft_print_unsigned_int(unsigned int n);
-int	ft_print_lower_hex(unsigned int n);
-int	ft_print_upper_hex(unsigned int n);
+int	ft_print_hex(unsigned int n, const char *base);
 
 #endif

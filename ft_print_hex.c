@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_lower_hex.c                               :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:20:51 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 19:29:04 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 00:22:42 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putnbr_hex_fd(unsigned int n, int fd)
-{
-	char	*radix;
-
-	radix = "0123456789abcdef";
-	if (fd < 0)
-		return ;
-	if (n >= 16)
-		ft_putnbr_hex_fd(n / 16, fd);
-	if (n > 10)
-		ft_putchar_fd(radix[n % 16], fd);
-	else
-		ft_putchar_fd(radix[n % 16], fd);
-}
-
-int	ft_print_lower_hex(unsigned int n)
+int	ft_print_hex(unsigned int n, const char *base)
 {
 	int				ret;
 	unsigned int	digit;
@@ -41,6 +26,9 @@ int	ft_print_lower_hex(unsigned int n)
 		digit /= 16;
 		ret++;
 	}
-	ft_putnbr_hex_fd(n, 1);
+	if (n >= 16)
+		ft_print_hex(n / 16, base);
+	else
+		ft_putchar_fd(base[n % 16], 1);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:20:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/07/14 19:27:45 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/07/17 00:15:36 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_eval_format(va_list args, const char format)
 	if (format == 'u')
 		ret += ft_print_unsigned_int(va_arg(args, int));
 	if (format == 'x')
-		ret += ft_print_lower_hex(va_arg(args, unsigned int));
+		ret += ft_print_hex(va_arg(args, unsigned int), LOWER_HEX_BASE);
 	if (format == 'X')
-		ret += ft_print_upper_hex(va_arg(args, unsigned int));
+		ret += ft_print_hex(va_arg(args, unsigned int), UPPER_HEX_BASE);
 	if (format == '%')
 		ret += write(1, "%", 1);
 	return (ret);
